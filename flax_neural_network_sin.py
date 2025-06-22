@@ -92,10 +92,12 @@ for epoch in range(N_EPOCHS):
         print(loss)
     loss_history.append(loss)
 
-#plt.plot(loss_history)
-#plt.yscale("log")
-#plt.show()
+plt.plot(loss_history)
+plt.yscale("log")
+plt.savefig("images/loss_history_flax_neural_network_sin.png")
+plt.clf()
+
 
 plt.scatter(x_samples, y_samples)
 plt.scatter(x_samples, model.apply({'params': state.params}, x_samples))
-plt.show()
+plt.savefig("images/inference_flax_neural_network_sin.png")
